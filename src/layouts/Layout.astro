@@ -12,23 +12,19 @@ import Footer from './Footer.astro'
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <script is:inline>
-      //   if (localStorage.getItem('theme') === null) {
+      // Lets us preview dark mode for now
       document.documentElement.setAttribute('data-theme', 'dark')
-      //   } else
-      //     document.documentElement.setAttribute(
-      //       'data-theme',
-      //       localStorage.getItem('theme')
-      //     )
-      // "theme" LocalStorage value is set by the package to remember user preference.
-      // The value is checked and applyed before rendering anything.
     </script>
   </head>
   <body>
     <Header />
-    <slot />
+    <main class="prose">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
+
 <style is:global>
   :root {
     --accent: 124, 58, 237;
@@ -38,13 +34,5 @@ import Footer from './Footer.astro'
       #24c8db 30%,
       white 60%
     );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 </style>

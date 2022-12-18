@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui')],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
   /** @type {import('daisyui').Config} */
   daisyui: {
     themes: [
@@ -13,9 +13,19 @@ module.exports = {
           primary: '#24c8db',
           secondary: '#ffc131',
           accent: '#24c8db',
-          neutral: '#24c8db',
+          neutral: '#2f2f2f',
           'base-100': '#070707',
           'base-200': '#0f0f0f',
+          'base-content': '#f6f6f6',
+        },
+        light: {
+          primary: '#24c8db',
+          secondary: '#ffc131',
+          accent: '#24c8db',
+          neutral: '#2f2f2f',
+          'base-100': '#070707',
+          'base-200': '#0f0f0f',
+          'base-content': '#f6f6f6',
         },
       },
     ],

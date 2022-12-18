@@ -2,6 +2,7 @@
 title: Frequently Asked Questions
 sidebar_position: 10
 description: Fixes for common issues
+layout: ../../layouts/Layout.astro
 ---
 
 ## How can I use unpublished Tauri changes?
