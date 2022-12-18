@@ -1,0 +1,9 @@
+@import 'bootstrap-icons';
+
+[data-theme='light'] .dark-mode-only {
+  display: none;
+}
+
+[data-theme='dark'] .light-mode-only {
+  display: none;
+}

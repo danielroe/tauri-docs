@@ -5,4 +5,19 @@ module.exports = {
     extend: {},
   },
   plugins: [require('daisyui')],
+  /** @type {import('daisyui').Config} */
+  daisyui: {
+    themes: [
+      {
+        dark: {
+          primary: '#24c8db',
+          secondary: '#ffc131',
+          accent: '#24c8db',
+          neutral: '#24c8db',
+          'base-100': '#070707',
+          'base-200': '#0f0f0f',
+        },
+      },
+    ],
+  },
 }

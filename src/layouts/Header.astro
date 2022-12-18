@@ -4,13 +4,45 @@ import logoDark from '/meta/tauri_logo_dark.svg'
 ---
 
 <div class="navbar bg-base-100">
+  <!-- Leading -->
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">
-      <img class="logo" src={logoDark} alt="Tauri logo" />
+    <a class="btn btn-ghost">
+      <img class="logo dark-mode-only" src={logoDark} alt="Tauri logo" />
+      <img class="logo light-mode-only" src={logoLight} alt="Tauri logo" />
     </a>
+    <ul class="menu menu-horizontal px-1">
+      <li><a>Guides</a></li>
+      <li>
+        <a>
+          References
+          <i class="bi bi-chevron-down"></i>
+        </a>
+
+        <ul class="p-2 bg-base-200">
+          <li><a>Architecture</a></li>
+          <li><a>JavaScript API Docs</a></li>
+          <li><a>Rust API Docs</a></li>
+          <li><a>Configuration File</a></li>
+          <li><a>Tauri CLI</a></li>
+        </ul>
+      </li>
+      <li><a>About</a></li>
+    </ul>
   </div>
+  <!-- Trailing -->
   <div class="flex-none">
-    <button class="btn btn-square btn-ghost">I spy Alve</button>
+    <button class="btn btn-circle btn-ghost">
+      <i class="bi bi-github"></i>
+    </button>
+    <button class="btn btn-circle btn-ghost">
+      <i class="bi bi-twitter"></i>
+    </button>
+    <button class="btn btn-circle btn-ghost">
+      <i class="bi bi-mastodon"></i>
+    </button>
+    <div class="form-control">
+      <input type="text" placeholder="Search" class="input input-bordered" />
+    </div>
   </div>
 </div>
 
