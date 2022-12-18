@@ -1,0 +1,21 @@
+---
+import BaseLayout from './BaseLayout.astro'
+import LeadingSidebar from '../components/LeadingSidebar.astro'
+import Footer from './Footer.astro'
+import Header from './Header.astro'
+import TrailingSidebar from '../components/TrailingSidebar.astro'
+---
+
+<BaseLayout>
+  <div class="drawer drawer-mobile">
+    <input id="leading-drawer" type="checkbox" class="drawer-toggle" />
+    <LeadingSidebar />
+    <div class="drawer-content prose">
+      <main>
+        <slot />
+      </main>
+      <TrailingSidebar />
+      <Footer />
+    </div>
+  </div>
+</BaseLayout>

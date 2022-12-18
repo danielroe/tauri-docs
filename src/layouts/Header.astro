@@ -3,7 +3,7 @@ import logoLight from '/meta/tauri_logo_light.svg'
 import logoDark from '/meta/tauri_logo_dark.svg'
 ---
 
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-200">
   <!-- Leading -->
   <div class="flex-1">
     <a class="btn btn-link" href="/">
@@ -30,7 +30,7 @@ import logoDark from '/meta/tauri_logo_dark.svg'
     </ul>
   </div>
   <!-- Trailing -->
-  <div class="flex-none">
+  <div class="flex-none socials">
     <button class="btn btn-circle btn-ghost">
       <i class="bi bi-github"></i>
     </button>
@@ -52,5 +52,8 @@ import logoDark from '/meta/tauri_logo_dark.svg'
 <style>
   .logo {
     height: 100%;
+  }
+  .socials > * > i {
+    font-size: 1.5em;
   }
 </style>

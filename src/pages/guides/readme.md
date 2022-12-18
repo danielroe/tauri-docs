@@ -1,5 +1,7 @@
-import DocCardList from '@theme/DocCardList'
-import { useCurrentSidebarCategory } from '@docusaurus/theme-common'
+---
+title: Readme
+layout: ../../layouts/Layout.astro
+---
 
 # Guides
 
@@ -8,5 +10,3 @@ Tauri is an app construction toolkit that lets you build software for all major 
 Whether you're new to Tauri development, want to integrate Tauri into an existing project, are ready to get your app into the hands of users, or want to learn how to use a common Tauri feature, we have the help for you.
 
 If you can't find what you're looking for or have a suggestion to improve our guides, reach out to our community on [Discord](https://discord.com/invite/tauri).
-
-<DocCardList items={useCurrentSidebarCategory().items} />

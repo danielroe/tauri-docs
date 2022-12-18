@@ -1,0 +1,50 @@
+---
+const guides = [
+  {
+    title: 'Getting Started',
+    link: '/guides/getting-started/prerequisites',
+    isActive: true,
+  },
+  {
+    title: 'Development',
+    link: '/guides/getting-started/prerequisites',
+    isActive: false,
+  },
+  {
+    title: 'Debugging',
+    link: '/guides/getting-started/prerequisites',
+    isActive: false,
+  },
+  {
+    title: 'Testing',
+    link: '/guides/getting-started/prerequisites',
+    isActive: false,
+  },
+  {
+    title: 'Building',
+    link: '/guides/getting-started/prerequisites',
+    isActive: false,
+  },
+  {
+    title: 'Distribution',
+    link: '/guides/getting-started/prerequisites',
+    isActive: false,
+  },
+]
+---
+
+<div class="drawer-side bg-base-200">
+  <label for="leading-drawer" class="drawer-overlay"></label>
+  <ul class="menu w-60">
+    <li class="menu-title">
+      <span>Guides</span>
+    </li>
+    {
+      guides.map((entry) => (
+        <li class={entry.isActive ? 'bordered' : ''}>
+          <a href={entry.link}>{entry.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
