@@ -1,12 +1,13 @@
 ---
 import BaseLayout from './BaseLayout.astro'
 import Footer from './Footer.astro'
-import Header from './Header.astro'
 ---
 
 <BaseLayout>
-  <main>
-    <slot />
-  </main>
-  <Footer />
+  <div class="h-full flex flex-col bg-slate-500">
+    <main class="grow">
+      <slot />
+    </main>
+    <Footer />
+  </div>
 </BaseLayout>

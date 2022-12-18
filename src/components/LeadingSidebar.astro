@@ -1,47 +1,43 @@
 ---
+const { frontmatter } = Astro.props
+
 const guides = [
   {
     title: 'Getting Started',
-    link: '/guides/getting-started/prerequisites',
-    isActive: true,
+    link: '/guides/getting-started',
   },
   {
     title: 'Development',
-    link: '/guides/getting-started/prerequisites',
-    isActive: false,
+    link: '/guides/development',
   },
   {
     title: 'Debugging',
-    link: '/guides/getting-started/prerequisites',
-    isActive: false,
+    link: '/guides/debugging',
   },
   {
     title: 'Testing',
-    link: '/guides/getting-started/prerequisites',
-    isActive: false,
+    link: '/guides/testing',
   },
   {
     title: 'Building',
-    link: '/guides/getting-started/prerequisites',
-    isActive: false,
+    link: '/guides/building',
   },
   {
     title: 'Distribution',
-    link: '/guides/getting-started/prerequisites',
-    isActive: false,
+    link: '/guides/distribution',
   },
 ]
 ---
 
-<div class="drawer-side bg-base-200">
-  <label for="leading-drawer" class="drawer-overlay"></label>
-  <ul class="menu w-60">
+<div class="drawer-side bg-base-200 py-8 w-60">
+  <label for="leading-sidebar" class="drawer-overlay"></label>
+  <ul class="menu">
     <li class="menu-title">
       <span>Guides</span>
     </li>
     {
       guides.map((entry) => (
-        <li class={entry.isActive ? 'bordered' : ''}>
+        <li class={frontmatter.url == entry.link ? 'bordered' : ''}>
           <a href={entry.link}>{entry.title}</a>
         </li>
       ))

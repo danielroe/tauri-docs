@@ -1,6 +1,6 @@
 ---
 title: Readme
-layout: ../../layouts/Layout.astro
+layout: '@layouts/DocLayout.astro'
 ---
 
 # Guides

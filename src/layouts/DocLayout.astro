@@ -2,20 +2,21 @@
 import BaseLayout from './BaseLayout.astro'
 import LeadingSidebar from '../components/LeadingSidebar.astro'
 import Footer from './Footer.astro'
-import Header from './Header.astro'
 import TrailingSidebar from '../components/TrailingSidebar.astro'
+
+const { frontmatter } = Astro.props
 ---
 
 <BaseLayout>
   <div class="drawer drawer-mobile">
-    <input id="leading-drawer" type="checkbox" class="drawer-toggle" />
-    <LeadingSidebar />
-    <div class="drawer-content prose">
-      <main>
+    <input id="leading-sidebar" type="checkbox" class="drawer-toggle" />
+    <LeadingSidebar frontmatter={frontmatter} />
+    <div class="drawer-content h-full flex flex-col p-8">
+      <main class="prose grow">
         <slot />
       </main>
-      <TrailingSidebar />
       <Footer />
     </div>
+    <!-- <TrailingSidebar /> -->
   </div>
 </BaseLayout>
