@@ -1,1 +1,21 @@
-<p>I'm the top of the page</p>
+---
+import logoLight from '/meta/tauri_logo_light.svg'
+import logoDark from '/meta/tauri_logo_dark.svg'
+---
+
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a class="btn btn-ghost normal-case text-xl">
+      <img class="logo" src={logoDark} alt="Tauri logo" />
+    </a>
+  </div>
+  <div class="flex-none">
+    <button class="btn btn-square btn-ghost">I spy Alve</button>
+  </div>
+</div>
+
+<style>
+  .logo {
+    height: 100%;
+  }
+</style>
