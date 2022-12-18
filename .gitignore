@@ -3,6 +3,8 @@
 
 # Production
 /build
+dist/
+.output/
 
 # Generated files
 .docusaurus
@@ -16,9 +18,11 @@
 .env.test.local
 .env.production.local
 
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 .vscode
 examples
