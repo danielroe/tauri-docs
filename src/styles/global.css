@@ -1,7 +1,14 @@
 @import 'bootstrap-icons';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+:root {
+  --primary: #ffffff;
+  --secondary: #ffffff;
+  --accent: #ffffff;
+  --neutral: #ffffff;
+  --base-100: #ffffff;
+  --base-200: #ffffff;
+  --base-300: #ffffff;
+}
 
 [data-theme='light'] .dark-mode-only {
   display: none;

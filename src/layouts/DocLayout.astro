@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro'
 import LeadingSidebar from '../components/LeadingSidebar.astro'
-import Footer from './Footer.astro'
+import Footer from '../components/Footer.astro'
 import TrailingSidebar from '../components/TrailingSidebar.astro'
 
 const { frontmatter } = Astro.props
@@ -12,7 +12,7 @@ const { frontmatter } = Astro.props
     <input id="leading-sidebar" type="checkbox" class="drawer-toggle" />
     <LeadingSidebar frontmatter={frontmatter} />
     <div class="drawer-content h-full flex flex-col p-8">
-      <main class="prose grow">
+      <main class="prose grow max-w-none">
         <slot />
       </main>
       <Footer />
