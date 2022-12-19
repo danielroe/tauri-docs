@@ -1,8 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro'
-import LeadingSidebar from '../components/LeadingSidebar.astro'
-import Footer from '../components/Footer.astro'
-import TrailingSidebar from '../components/TrailingSidebar.astro'
+import LeadingSidebar from '../components/Layout/LeadingSidebar.astro'
+import Footer from '../components/Layout/Footer.astro'
 
 const { frontmatter } = Astro.props
 ---
@@ -17,6 +16,5 @@ const { frontmatter } = Astro.props
       </main>
       <Footer />
     </div>
-    <!-- <TrailingSidebar /> -->
   </div>
 </BaseLayout>

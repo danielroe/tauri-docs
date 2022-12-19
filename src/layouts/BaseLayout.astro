@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css'
-import Header from '../components/Header.astro'
+import NavBar from '../components/Layout/NavBar.astro'
+import NavDrawer from 'src/components/Layout/NavDrawer.astro'
 ---
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,10 +16,20 @@ import Header from '../components/Header.astro'
     </script>
   </head>
   <body>
-    <Header />
-    <slot />
+    <div class="drawer">
+      <NavBar />
+      <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <label for="nav-drawer" class="">Open drawer</label>
+        <slot />
+      </div>
+      <div class="drawer-side">
+        <NavDrawer />
+      </div>
+    </div>
   </body>
 </html>
+
 <style>
   body {
     display: flex;

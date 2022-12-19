@@ -1,0 +1,77 @@
+---
+import logoLight from '/meta/tauri_logo_light.svg'
+import logoDark from '/meta/tauri_logo_dark.svg'
+import { LEADING_NAVIGATION, SOCIALS, NavItem } from 'src/config'
+---
+
+<div class="navbar bg-base-300">
+  <!-- Leading -->
+  <div class="navbar-start">
+    <ul class="menu menu-horizontal px-1">
+      <label
+        for="nav-drawer"
+        class="btn btn-ghost btn-square drawer-button lg:hidden"
+        ><i class="bi bi-list large-icon"></i>
+      </label>
+      <li>
+        <a href="/">
+          <img class="logo dark-mode-only" src={logoDark} alt="Tauri logo" />
+          <img class="logo light-mode-only" src={logoLight} alt="Tauri logo" />
+        </a>
+      </li>
+      {
+        LEADING_NAVIGATION.map((item: NavItem, index) => {
+          if (item.children) {
+            return (
+              <li tabindex={index} class="hidden lg:flex">
+                <a>
+                  {item.title}
+                  <i class="bi bi-chevron-down" />
+                </a>
+                <ul class="p-2 bg-base-200 z-50">
+                  {item.children.map((item: NavItem) => (
+                    <li>
+                      <a>{item.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            )
+          } else {
+            return (
+              <li class="hidden lg:flex">
+                <a>{item.title}</a>
+              </li>
+            )
+          }
+        })
+      }
+    </ul>
+  </div>
+  <!-- Trailing -->
+  <div class="navbar-end">
+    <ul class="menu menu-horizontal px-1">
+      {
+        SOCIALS.map((social) => (
+          <li class="hidden lg:flex">
+            <a>
+              <i class:list={['bi large-icon', social.icon]} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="form-control">
+      <input type="text" placeholder="Search" class="input input-bordered" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .logo {
+    height: 32px;
+  }
+  .large-icon {
+    font-size: 1.5em;
+  }
+</style>
