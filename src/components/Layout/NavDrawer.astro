@@ -2,7 +2,39 @@
 import { LEADING_NAVIGATION, SOCIALS, NavItem } from 'src/config'
 ---
 
-<label for="my-drawer" class="drawer-overlay"></label>
-<ul class="menu bg-base-300">
-  <li>Hello, world!</li>
-</ul>
+<label for="nav-drawer" class="drawer-overlay"></label>
+<div class="bg-base-300">
+  <ul>
+    {
+      LEADING_NAVIGATION.map((item, index) => (
+        <li>
+          <div tabindex={index} class="collapse group collapse-arrow">
+            <div class="collapse-title group-focus:bg-base-200">
+              {item.title}
+            </div>
+            <div class="collapse-content group-focus:bg-base-200">
+              <ul class="menu p-2">
+                {item.children?.map((child) => (
+                  <li>
+                    <a>{child.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="menu menu-horizontal">
+    {
+      SOCIALS.map((item) => (
+        <li>
+          <a href={item.link}>
+            <i class:list={['bi', item.icon]} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

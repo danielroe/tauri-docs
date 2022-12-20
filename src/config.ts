@@ -34,6 +34,11 @@ export const LEADING_NAVIGATION: NavItem[] = [
   {
     title: 'About',
     link: '/',
+    children: [
+      { title: 'What is Tauri?', link: '/' },
+      { title: 'Trademark Guidelines', link: '/' },
+      { title: 'Governance', link: '/' },
+    ],
   },
 ]
 

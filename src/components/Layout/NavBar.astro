@@ -8,11 +8,14 @@ import { LEADING_NAVIGATION, SOCIALS, NavItem } from 'src/config'
   <!-- Leading -->
   <div class="navbar-start">
     <ul class="menu menu-horizontal px-1">
-      <label
-        for="nav-drawer"
-        class="btn btn-ghost btn-square drawer-button lg:hidden"
-        ><i class="bi bi-list large-icon"></i>
-      </label>
+      <li>
+        <label
+          for="nav-drawer"
+          class="btn btn-ghost btn-square drawer-button lg:hidden"
+        >
+          <i class="bi bi-list large-icon"></i>
+        </label>
+      </li>
       <li>
         <a href="/">
           <img class="logo dark-mode-only" src={logoDark} alt="Tauri logo" />
@@ -60,18 +63,21 @@ import { LEADING_NAVIGATION, SOCIALS, NavItem } from 'src/config'
           </li>
         ))
       }
+      <li>
+        <i class="bi bi-search"></i>
+      </li>
+      <div class="form-control">
+        <input type="text" placeholder="Search" class="input input-bordered" />
+      </div>
     </ul>
-    <div class="form-control">
-      <input type="text" placeholder="Search" class="input input-bordered" />
-    </div>
   </div>
 </div>
 
 <style>
   .logo {
-    height: 32px;
+    height: 28px;
   }
   .large-icon {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
   }
 </style>

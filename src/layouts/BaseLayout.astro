@@ -16,11 +16,10 @@ import NavDrawer from 'src/components/Layout/NavDrawer.astro'
     </script>
   </head>
   <body>
+    <NavBar />
     <div class="drawer">
-      <NavBar />
       <input id="nav-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
-        <label for="nav-drawer" class="">Open drawer</label>
         <slot />
       </div>
       <div class="drawer-side">
