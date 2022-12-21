@@ -10,23 +10,16 @@ module.exports = {
     themes: [
       {
         dark: {
-          primary: '#24c8db',
-          secondary: '#ffc131',
-          accent: '#24c8db',
-          neutral: '#2f2f2f',
+          primary: '#24C8DB',
+          secondary: '#2f2f2f',
+          accent: '#FFC131',
+          neutral: '#f6f6f6',
           'base-100': '#070707',
-          'base-200': '#0f0f0f',
-          'base-300': '#161616',
-          'base-content': '#f6f6f6',
+          'base-200': '#1b1b1b',
+          'base-300': '#1f1f1f',
         },
         light: {
-          primary: '#24c8db',
-          secondary: '#ffc131',
-          accent: '#24c8db',
-          neutral: '#2f2f2f',
-          'base-100': '#070707',
-          'base-200': '#0f0f0f',
-          'base-content': '#f6f6f6',
+          // Should be the same colors as dark
         },
       },
     ],
