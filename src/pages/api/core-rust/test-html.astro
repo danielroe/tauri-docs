@@ -1,0 +1,10 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { rawContent, compiledContent } from './test2.md'
+---
+
+<Layout>
+  <div>
+    <Fragment set:html={compiledContent} />
+  </div>
+</Layout>

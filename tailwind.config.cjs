@@ -19,7 +19,7 @@ module.exports = {
           'base-300': '#1f1f1f',
         },
         light: {
-          // Should be the same colors as dark
+          // Should be the same variables as dark
         },
       },
     ],

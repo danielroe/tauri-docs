@@ -1,0 +1,17 @@
+---
+import data from './tauri.json'
+import Layout from '@layouts/Layout.astro'
+import { marked } from 'marked'
+const node = data.index[data.root]
+const content = marked.parse(node.docs)
+---
+
+<Layout>
+  <h1><code>{node.name}</code></h1>
+  <code>{node.span.filename}</code>
+  <div set:html={content} />
+
+  <br />
+
+  <!-- {JSON.stringify(data.index[data.root].docs)} -->
+</Layout>
