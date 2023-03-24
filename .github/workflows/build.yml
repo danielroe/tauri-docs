@@ -23,12 +23,12 @@ jobs:
       locale-list: ${{ steps.generate.outputs.locale-list }}
     steps:
       - name: Checkout site
-        uses: actions/checkout@v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           # Forces so that only pull requests from the original repo are executed
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           cache: 'yarn'
       - name: Setup yarn
@@ -49,13 +49,13 @@ jobs:
         id: generate
         run: node ./.scripts/build.js
       - name: Save translations
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
         with:
           name: i18n
           path: i18n
           if-no-files-found: error
       - name: Save config
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
         with:
           name: config
           path: docusaurus.config.js
@@ -68,23 +68,23 @@ jobs:
       matrix:
         locale: ${{ fromJson(needs.build-locale-list.outputs.locale-list) }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           # Forces so that only pull requests from the original repo are executed
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
       - name: Retrieve translations
         id: i18n
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: i18n
           path: i18n
       - name: Retrieve config
         id: config
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: config
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3
         with:
           cache: 'yarn'
       - name: Setup yarn
@@ -104,7 +104,7 @@ jobs:
           rsync -a --ignore-existing docs/ i18n/${{ matrix.locale }}/docusaurus-plugin-content-docs/current
           yarn build --locale ${{ matrix.locale }} --out-dir ./build/${{ matrix.locale }}
       - name: Save build folder
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
         with:
           name: build
           path: build
@@ -114,19 +114,19 @@ jobs:
     needs: build-locales
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           # Forces so that only pull requests from the original repo are executed
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
       - name: Retrieve build folder
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: build
           path: build
       - name: Deploy to Netlify
         # Fork of https://github.com/nwtgck/actions-netlify for security reasons
-        uses: tauri-apps/actions-netlify@v1.2.4
+        uses: tauri-apps/actions-netlify@ac1cb16858bada08a9c71a81240a85cfc3f72913 # v1.2.4
         with:
           publish-dir: './build'
           netlify-config-path: ./netlify.toml

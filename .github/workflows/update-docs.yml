@@ -36,14 +36,14 @@ jobs:
     steps:
       # Setup
       - name: Checkout tauri
-        uses: actions/checkout@v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           repository: tauri-apps/tauri
           ref: ${{ github.event.inputs.tauriBranch }}
           path: tauri
 
       - name: Checkout tauri-docs
-        uses: actions/checkout@v3
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
         with:
           repository: tauri-apps/tauri-docs
           path: tauri-docs
@@ -92,7 +92,7 @@ jobs:
         with:
           components: rust-docs
 
-      - uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@6fd3edff6979b79f87531400ad694fb7f2c84b1f # v2
         with:
           workspaces: tauri/tooling/cli
 
@@ -126,7 +126,7 @@ jobs:
 
       - name: Create pull request for updated docs
         # soft fork of https://github.com/peter-evans/create-pull-request for security purposes
-        uses: tauri-apps/create-pull-request@v3.4.1
+        uses: tauri-apps/create-pull-request@c7f493a8000b8aeb17a1332e326ba76b57cb83eb # v3.4.1
         if: github.event_name != 'pull_request' && github.event_name != 'push'
         with:
           token: ${{ secrets.ORG_TAURI_BOT_PAT }}
